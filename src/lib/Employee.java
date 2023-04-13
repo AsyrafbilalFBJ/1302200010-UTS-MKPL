@@ -61,22 +61,27 @@ public class Employee {
 	 * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
 	 */
 	
+	public static final int FIRST_GRADE_SALARY = 3000000;
+        public static final int SECOND_GRADE_SALARY = 5000000;
+        public static final int THIRD_GRADE_SALARY = 7000000;
+        private static final double SALARY_INCREASE_FOREIGN_EMPLOYEE = 1.5;
+
 	public void setMonthlySalary(int grade) {	
 		switch (grade) {
 		    case 1:
-			this.monthlySalary = 3000000;
+			this.monthlySalary = FIRST_GRADE_SALARY;
 			break;
 		    case 2:
-			this.monthlySalary = 5000000;
+			this.monthlySalary = SECOND_GRADE_SALARY;
 			break;
 		    case 3:
-			this.monthlySalary = 7000000;
+			this.monthlySalary = THIRD_GRADE_SALARY;
 			break;
 		    default:
 			throw new IllegalArgumentException("Invalid grade: " + grade);
 		}
 		if (isForeigner) {
-		    this.monthlySalary =  (int) (this.monthlySalary * 1.5);
+		    this.monthlySalary =  (int) (this.monthlySalary * SALARY_INCREASE_FOREIGN_EMPLOYEE);
 		}
 	}
 	
